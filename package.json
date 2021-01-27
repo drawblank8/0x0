@@ -1,0 +1,18 @@
+{
+  "name": "0x0",
+  "version": "0.0.1",
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^11.2.1",
+    "electron-positioner": "^4.1.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "jquery": "^3.5.1",
+    "luxon": "^1.25.0",
+    "piexifjs": "^1.0.6",
+    "png-metadata": "^1.0.2"
+  }
+}

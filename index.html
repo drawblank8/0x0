@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        color: white;
+      }
+      body {
+        margin-left: 68px;
+      }
+      button {
+        height: 30px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 0;
+      }
+    </style>
+    <div class="button-wrapper">
+      <button id="rename">Rename</button>
+      <button id="non-upload">Don't Upload</button>
+    </div>
+    <script>
+      if (typeof module === "object") {
+        window.module = module;
+        module = undefined;
+      }
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      if (window.module) module = window.module;
+    </script>
+    <script>
+      const { ipcRenderer } = require("electron");
+      $(document).ready(function () {
+        $("#rename").click(function () {
+          ipcRenderer.send("openSaveDialogue");
+          console.log("Sending openSaveDialogue");
+        });
+        $("#non-upload").click(function () {
+          ipcRenderer.send("noSave");
+          console.log("Sending closeWindow");
+        });
+      });
+    </script>
+  </body>
+</html>
